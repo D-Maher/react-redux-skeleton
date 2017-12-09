@@ -1,9 +1,11 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
 import { createLogger } from 'redux-logger';
 import {
   CountReducer,
   ValueReducer,
 } from './reducers';
+import rootSaga from './sagas';
 
 export * from './actions';
 
@@ -11,6 +13,8 @@ const reducer = combineReducers({
   count: CountReducer,
   value: ValueReducer,
 });
+
+const sagaMiddleware = createSagaMiddleware();
 
 const logger = createLogger({
   colors: {
@@ -26,8 +30,9 @@ const configureStore = (initialState = {}) => ({
   ...createStore(
     reducer,
     initialState,
-    applyMiddleware(logger),
+    applyMiddleware(sagaMiddleware, logger),
   ),
 });
 
 export const store = configureStore();
+sagaMiddleware.run(rootSaga);
