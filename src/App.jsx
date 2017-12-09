@@ -3,7 +3,7 @@ import { UpDownComponent } from './components';
 import reactLogo from './logo.svg';
 import reduxLogo from './redux.svg';
 
-import './App.css';
+import './App.scss';
 
 const App = () => (
   <div className="App">

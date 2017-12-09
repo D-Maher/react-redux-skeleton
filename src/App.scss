@@ -1,0 +1,47 @@
+.App {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+
+  .App-header {
+    background-color: #0d2d4d;
+    padding: 20px;
+    color: white;
+    box-shadow: 0px 1px 10px 0px #000;
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      margin-bottom: 2rem;
+
+      @keyframes App-logo-pulse {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      .react-logo {
+        animation: App-logo-pulse infinite 10s linear;
+        height: 5rem;
+        display: block;
+      }
+
+      .redux-logo {
+        animation: App-logo-pulse infinite 10s linear;
+        height: 5rem;
+        display: block;
+      }
+
+      .redux-saga-logo {
+        animation: App-logo-pulse infinite 10s linear;
+        height: 4rem;
+        display: block;
+      }
+    }
+
+    .App-title {
+      font-size: 1.5em;
+      margin-bottom: 1rem;
+    }
+  }
+}
